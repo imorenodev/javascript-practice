@@ -13,3 +13,4 @@ function MONAD() {
 var unit = MONAD();
 var monad = unit("Hello World!");
 monad.bind(alert);
+//unit(value).bind(f) ==is equal to== f(value)
