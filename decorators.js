@@ -15,3 +15,13 @@ const once = (fn) => {
 const checkout = once( () => console.log('all checked out!') );
 checkout(); //'all checked out'
 checkout(); //undefined
+
+
+//the unary decorator
+const unary = (fn) =>
+fn.length === 1 ? fn : function (x) {
+  return fn.call(this, x);
+}
+
+['1', '2', '3'].map(unary(parseInt))
+// [1, 2, 3]
